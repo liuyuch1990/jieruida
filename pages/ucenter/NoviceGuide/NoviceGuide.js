@@ -363,7 +363,7 @@ Page({
     var classId = e.target.dataset.id;
     var classindex = e.target.dataset.index;
     var className = e.target.dataset.name;
-    console.log("编辑分类：", e.target.dataset);
+    console.log("编辑分类 ：", e.target.dataset);
     this.setData({
       editClassId: classId,
       editClassIndex: classindex,
