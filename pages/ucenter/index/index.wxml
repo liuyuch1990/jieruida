@@ -78,7 +78,7 @@
     <image class='box_bottom_item_image' src='../../../image/ucenter_feedback.png'></image>
     <view class='box_bottom_item_text'>抢购</view>
   </view>
-  <view wx:if="{{isSysAdmin}}" class='box_bottom_item' bindtap='jumpPage' data-route='/pages/ucenter/NoviceGuide/NoviceGuide'>
+  <view wx:if="{{isAdmin}}" class='box_bottom_item' bindtap='jumpPage' data-route='/pages/ucenter/NoviceGuide/NoviceGuide'>
     <image class='box_bottom_item_image' src='../../../image/ucenter_newsguides.png'></image>
     <view class='box_bottom_item_text'>小程序管理</view>
   </view>

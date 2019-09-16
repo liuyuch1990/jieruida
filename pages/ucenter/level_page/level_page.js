@@ -154,6 +154,9 @@ Page({
       console.log(res)
       wx.hideLoading()
       if (res.code === 0) {
+        var userinfo = wx.getStorageSync('userInfo')
+        userinfo.status = status
+        wx.setStorageSync('userInfo', userinfo)
         that.onLoad()
       }
     });
