@@ -7,6 +7,8 @@ module.exports = {
   exportExcel: 'https://www.jieruida-qd.com/api/order/export',
   downloadExcel: 'https://www.jieruida-qd.com/api/order/downloadExcel',
   getUserInfoByCode: 'https://www.jieruida-qd.com/api/wxpay/saveUserInfo',
+  queryAllUsers: 'https://www.jieruida-qd.com/sys/user/queryAllUsers',
+  updateUsersStatus: 'https://www.jieruida-qd.com/sys/user/update',
   deleteAppForPic: 'https://www.jieruida-qd.com/sys/log/deleteAppForPic/',
   queryApp: 'https://www.jieruida-qd.com/sys/log/queryApp',
   updateAppForPic: 'https://www.jieruida-qd.com/sys/log/updateAppForPic',

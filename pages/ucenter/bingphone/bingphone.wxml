@@ -22,13 +22,7 @@
   <button size="mini" class='changebtn' type="default" disabled="{{changeisabled}}" bindtap="changed"> 更换绑定手机号 </button> -->
 
 
-<view wx:if="{{isbing}}">
-  <view class='bingtitle'>您已绑定手机号</view>
-  <image class='bing_image' src='../../../image/phonebing.png'></image>
-  <view class='bingphone'>{{userinfo.mobile}}</view>
-  <button size="mini" class='changebtn' type="default" disabled="{{changeisabled}}" bindtap="changed"> 更换绑定手机号 </button>
-</view>
-<view wx:if="{{!isbing}}">
+<view>
   <view class='bingtitle'>您还未绑定手机号</view>
   <image class='bing_image' src='../../../image/phonebing.png'></image>
   <view class='bingphone'>{{userinfo.mobile}}</view>

@@ -10,6 +10,7 @@ Page({
     userinfoinfo: '',
     route: '',
     auth: false,
+    isSysAdmin:false,
     CorporateName: '',
   },
   onLoad: function(options) {
@@ -17,7 +18,13 @@ Page({
     let that = this
     //判断是否有授权
     try {
+      var mobile = wx.getStorageSync('userInfo').mobile
       var value = wx.getStorageSync('auth')
+      if(mobile=='17512528181'||mobile=='18652974050'||mobile=='18652043832'){
+        that.setData({
+          isSysAdmin: true
+        })
+      }
       console.log(value)
       if (value) {
         that.setData({
@@ -47,7 +54,12 @@ Page({
 
   },
   onShow: function() {
-
+    var mobile = wx.getStorageSync('userInfo').mobile
+    if (mobile == '17512528181' || mobile == '18652974050' || mobile == '18652043832') {
+      this.setData({
+        isSysAdmin: true
+      })
+    }
     let userInfo = wx.getStorageSync('userInfo');
     let token = wx.getStorageSync('token');
 
