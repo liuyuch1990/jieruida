@@ -80,37 +80,5 @@ Page({
   onUnload: function () {
     // 页面关闭
 
-  },
-  switchTab: function () {
-    this.setData({
-      showType: this.data.showType == 1 ? 0 :1
-    });
-
-    this.getCommentList();
-  },
-  onReachBottom: function(){
-    console.log('onPullDownRefresh');
-    if ( this.data.showType == 0) {
-
-      if (this.data.allCount / this.data.size < this.data.allPage) {
-        return false;
-      }
-
-      this.setData({
-        'allPage' : this.data.allPage + 1
-      });
-    } else {
-      if (this.data.hasPicCount / this.data.size < this.data.picPage) {
-        return false;
-      }
-
-      this.setData({
-        'picPage': this.data.picPage + 1
-      });
-    }
-
-
-
-    this.getCommentList();
   }
 })

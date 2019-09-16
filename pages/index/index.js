@@ -22,7 +22,7 @@ Page({
     banner: [],
     channel: [],
     auth: false,
-    controll:true,
+    controll: true,
     userinfo: {},
     webviewurl: '/pages/out/out?base=1&url=',
     Inviter_userid: [],
@@ -136,16 +136,25 @@ Page({
     })
   },
   navToPage(e) {
+    var auth = wx.getStorageSync("userInfo").status
     var url = e.currentTarget.dataset.url
     if (url.indexOf("https") != -1) {
       url = this.data.webviewurl + encodeURIComponent(url)
     }
-    wx.navigateTo({
-      url: url,
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
-    })
+    if (url.indexOf("https") == -1 && (auth == 0||auth==undefined)) {
+      wx.showToast({
+        title: '您没有权限',
+        icon: 'none',
+        duration: 2000,
+      })
+    } else {
+      wx.navigateTo({
+        url: url,
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    }
   },
   setLoadingbusiness(options) {
     var beforefloorGoods = this.data.floorGoods
