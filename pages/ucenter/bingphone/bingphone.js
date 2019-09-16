@@ -32,11 +32,16 @@ Page({
    */
   onLoad: function(options) {
     var that = this
-    wx.showLoading({
-      title: '核实中...',
-      mask: true,
+    var userinfo = wx.getStorageSync("userInfo")
+    that.setData({
+      userinfo: userinfo
     })
-    that.findphone();
+    if (userinfo.mobile!=null||userinfo.mobile!=undefined){
+      that.setData({
+        isbing:true
+      })
+    }
+    //that.findphone();
   },
   startBingPhone() {
     let that = this
