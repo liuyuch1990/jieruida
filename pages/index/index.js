@@ -139,6 +139,9 @@ Page({
     var auth = wx.getStorageSync("userInfo").status
     var url = e.currentTarget.dataset.url
     if (url.indexOf("https") != -1) {
+      if (auth == 0 || auth == undefined){1
+         url = url.replace("1pageEdit","1pageInfo")
+      }
       url = this.data.webviewurl + encodeURIComponent(url)
     }
     if (url.indexOf("https") == -1 && (auth == 0||auth==undefined)) {
