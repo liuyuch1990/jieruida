@@ -35,7 +35,7 @@ Page({
     isRuleTrue: true,
     pageNumberbusiness: 2,
     pageNumberactivity: 2,
-    phonecall: '18652043832'
+    phonecall: '053280962867'
   },
   onShareAppMessage: function() {
     let that = this
